@@ -1,0 +1,2 @@
+draft-CoC-entity-attributes
+===========================
