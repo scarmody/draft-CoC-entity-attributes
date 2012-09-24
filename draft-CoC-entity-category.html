@@ -150,8 +150,8 @@
 
 <h3>Abstract</h3>
 
-<p>This document describes two SAML entity attributes that can be used by Service Providers in their SAML2 metadata. One can be used to
-      indicate that a Service Provider is operating in compliance with a specific Code of Conduct; the second attribute states the legal Jurisdiction where the Service Provider is located.
+<p>This document describes two SAML entity attributes that can be used by Entities in their SAML2 metadata. One can be used to
+      indicate that an Entity is operating in compliance with a specific Code of Conduct; the second attribute states the legal Jurisdiction binding the Entity.
       
 </p>
 <h3>Requirements Language</h3>
@@ -209,27 +209,27 @@ than English.</p>
 Introduction and Motivation</h3>
 
 <p>
-      	This document describes a specific SAML "entity category attribute" <a class='info' href='#SAML2EntityCategoryAttribute'>[SAML2EntityCategoryAttribute]<span> (</span><span class='info'>Cantor, S., Ed., &ldquo;SAML V2.0 Metadata Extension for Entity Attributes,&rdquo; August&nbsp;2009.</span><span>)</span></a> which indicates a claim that the entity thus labelled is committed to operating in compliance with a specific version of a Code of Conduct. It is expected that, over time, there may be multiple different Codes of Conduct; they may be developed by different communities, or may be newer versions of the developed by the same community. This specification is independent of whichever CoC is being referenced in a particular instance.
+      	This document describes a specific SAML "entity category attribute" <a class='info' href='#SAML2EntityAttribute'>[SAML2EntityAttribute]<span> (</span><span class='info'>Cantor, S., Ed., &ldquo;SAML V2.0 Metadata Extension for Entity Attributes,&rdquo; August&nbsp;2009.</span><span>)</span></a> which indicates a claim that the entity thus labelled is committed to operating in compliance with a specific version of a Code of Conduct. It is expected that, over time, there may be multiple different Codes of Conduct; they may be developed by different communities, or may be newer versions of the developed by the same community. This specification is independent of whichever CoC is being referenced in a particular instance.
       
 </p>
 <p>
-      	This document also describes a second SAML "entity category attribute" <a class='info' href='#SAML2EntityCategoryAttribute'>[SAML2EntityCategoryAttribute]<span> (</span><span class='info'>Cantor, S., Ed., &ldquo;SAML V2.0 Metadata Extension for Entity Attributes,&rdquo; August&nbsp;2009.</span><span>)</span></a> whose value is an assertion by the relying party of the country/legal jurisdiction where the Service Provider is located. This should indicate the legal framework under which the SP is operating, and under which disputes would be resolved if a contract does not exist or does not specify an alternative.
+      	This document also describes a second SAML "entity category attribute" <a class='info' href='#SAML2EntityAttribute'>[SAML2EntityAttribute]<span> (</span><span class='info'>Cantor, S., Ed., &ldquo;SAML V2.0 Metadata Extension for Entity Attributes,&rdquo; August&nbsp;2009.</span><span>)</span></a> whose value is an assertion of the country/legal jurisdiction which binds the Entity. This should indicate the legal framework under which the SP is operating, and under which disputes would be resolved if a contract does not exist or does not specify an alternative.
       
 </p>
 <p>
-      	These SAML entity category attribute claims MAY be used by a Service provider to convince an Identity Provider that the relying party is operating in compliance with the terms of the referenced Code of Conduct. Consequently an Identity Provider might consider the risk associated with releasing personal attribute values to that Service Provider to be acceptly low. This claim represents a statement, not a legal agreement.
+      	These SAML entity attribute claims MAY be used by a Service provider to convince an Identity Provider that the relying party is operating in compliance with the terms of the referenced Code of Conduct. Consequently an Identity Provider might consider the risk associated with releasing personal attribute values to that Service Provider to be acceptly low. This claim represents a statement, not a legal agreement.
       
 </p>
 <a name="anchor2"></a><br /><hr />
 <a name="rfc.section.2"></a><h3>2.&nbsp;
-Entity Category Attribute of CoC Compliance</h3>
+Entity Attribute of CoC Compliance</h3>
 
 <a name="anchor3"></a><br /><hr />
 <a name="rfc.section.2.1"></a><h3>2.1.&nbsp;
 Syntax</h3>
 
 <p>
-        	The value of the Name attribute on the enclosed SAML attribute is the identifier of the version of the Code of Conduct to which the Entity is committed. These values will typically be URNs. Typically, a Code of Conduct document will contain, within its text, the value to use as its "Name". There is no central Registry of these values.
+        	The value of the Name attribute on the enclosed SAML attribute is the identifier of the version of the Code of Conduct to which the Entity is committed. These values will typically be URIs. Typically, a Code of Conduct document will contain, within its text, the value to use as its "Name". There is no central Registry of these values.
         
 </p>
 <p>
@@ -246,7 +246,7 @@ Semantics</h3>
 </p>
 <a name="anchor5"></a><br /><hr />
 <a name="rfc.section.2.3"></a><h3>2.3.&nbsp;
-Entity Category Example</h3>
+Entity Example</h3>
 <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>&lt;mdattr:EntityAttributes
           	xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute" &gt;
         &lt;Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion"
@@ -257,7 +257,7 @@ Entity Category Example</h3>
         &lt;/mdattr:EntityAttributes&gt;</pre></div>
 <a name="anchor6"></a><br /><hr />
 <a name="rfc.section.3"></a><h3>3.&nbsp;
-Entity Category Attribute of Jurisdiction</h3>
+Entity Attribute of Jurisdiction</h3>
 
 <a name="anchor7"></a><br /><hr />
 <a name="rfc.section.3.1"></a><h3>3.1.&nbsp;
@@ -276,12 +276,12 @@ Syntax</h3>
 Semantics</h3>
 
 <p>
-          This EntityAttribute indicates that the country/jurisdiction that applies to the Entity.
+          This EntityAttribute indicates that the country/jurisdiction that applies to the Entity if a contract does not exist or does not specify an alternative.
         
 </p>
 <a name="anchor9"></a><br /><hr />
 <a name="rfc.section.3.3"></a><h3>3.3.&nbsp;
-Entity Category Support Example</h3>
+Entity Support Example</h3>
 <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>&lt;mdattr:EntityAttributes&gt;
         &lt;Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion"
         NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
@@ -312,10 +312,12 @@ IANA Considerations</h3>
 Security Considerations</h3>
 
 <p>
-        The presence of the entity category attribute within an entity's entity attributes
-        represents a series of claims (one for each attribute value) that the entity is
-        a member of the named categories.  Before accepting and acting on such claims, any
-        relying party needs to establish, at a level of assurance sufficient for the
+        The presence of the Code of Conduct compliance entity attribute
+        represents a series of claims (one for each attribute value) that the entity is committed to a Code of Conduct. The presence of the Jurisdiction entity attribute represents a claim that the entity is bound by the laws in a certain jurisdiction.
+      
+</p>
+<p>
+       Before accepting and acting on such claims, any relying party needs to establish, at a level of assurance sufficient for the
         intended use, a chain of trust concluding that the claim is justified.
       
 </p>
@@ -352,21 +354,13 @@ Security Considerations</h3>
           
 </li>
 <li>
-            The definition of the category itself; in particular, any statements it makes about
-            whether membership of the category may be self-asserted, or may only be asserted
+            The definition of the Entity Attribute itself; in particular, any statements it makes about
+            whether the value of the Entity Attribute may be self-asserted, or may only be asserted
             by particular authorities.
           
 </li>
 </ul><p>
     
-</p>
-<p>
-          The entity category support attribute is explicitly defined as a self-asserted
-          set of claims by the containing entity, but the provenance of the metadata remains
-          relevant to a relying party's decision to accept a claim of support as legitimate,
-          and the specific definition of a support claim will influence the assurance
-          required to act on it.
-        
 </p>
 <a name="To-Dos"></a><br /><hr />
 <a name="rfc.section.7"></a><h3>7.&nbsp;
@@ -393,7 +387,7 @@ To-Dos</h3>
 <table width="99%" border="0">
 <tr><td class="author-text" valign="top"><a name="RFC2119">[RFC2119]</a></td>
 <td class="author-text"><a href="mailto:sob@harvard.edu">Bradner, S.</a>, &ldquo;<a href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>,&rdquo; BCP&nbsp;14, RFC&nbsp;2119, March&nbsp;1997 (<a href="http://www.rfc-editor.org/rfc/rfc2119.txt">TXT</a>, <a href="http://xml.resource.org/public/rfc/html/rfc2119.html">HTML</a>, <a href="http://xml.resource.org/public/rfc/xml/rfc2119.xml">XML</a>).</td></tr>
-<tr><td class="author-text" valign="top"><a name="SAML2EntityCategoryAttribute">[SAML2EntityCategoryAttribute]</a></td>
+<tr><td class="author-text" valign="top"><a name="SAML2EntityAttribute">[SAML2EntityAttribute]</a></td>
 <td class="author-text">Cantor, S., Ed., &ldquo;<a href="http://wiki.oasis-open.org/security/SAML2MetadataAttr">SAML V2.0 Metadata Extension for Entity Attributes</a>,&rdquo; August&nbsp;2009 (<a href="http://docs.oasis-open.org/security/saml/Post2.0/sstc-metadata-attr-cs-01.pdf">PDF</a>).</td></tr>
 <tr><td class="author-text" valign="top"><a name="SAML2MetadataDRI">[SAML2MetadataDRI]</a></td>
 <td class="author-text">La Joie, C., Ed., &ldquo;<a href="http://wiki.oasis-open.org/security/SAML2MetadataDRI">SAML V2.0 Metadata Extensions for Registration and Publication Information Version 1.0</a>,&rdquo; April&nbsp;2012 (<a href="http://docs.oasis-open.org/security/saml/Post2.0/saml-metadata-rpi/v1.0/cs01/saml-metadata-rpi-v1.0-cs01.pdf">PDF</a>).</td></tr>
