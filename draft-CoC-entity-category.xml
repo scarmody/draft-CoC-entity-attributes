@@ -13,14 +13,14 @@
     <title abbrev="Entity Attributes - CoC">EntityAttributes: Code of Conduct and Jurisdiction</title>
 
     <author fullname="Mikael Linden" initials="M." surname="Linden" role="editor">
-      <organization abbrev="UKf">CSC - IT Center for Science Ltd.</organization>
+      <organization abbrev="CSC">CSC - IT Center for Science Ltd.</organization>
       <address>
         <email>mikael.linden@csc.fi</email>
       </address>
     </author>
 
     <author fullname="Steven Carmody" initials="S. T." surname="Carmody">
-      <organization abbrev="NDN">Brown University</organization>
+      <organization abbrev="BU">Brown University</organization>
       <address>
         <email>Steven_Carmody@brown.edu</email>
       </address>
@@ -45,11 +45,11 @@
   <middle>
     <section title="Introduction and Motivation">
       <t>
-      	This document describes a specific SAML "entity category attribute" <xref target="SAML2EntityAttribute"/> which indicates a claim that the entity thus labelled is committed to operating in compliance with a specific version of a Code of Conduct. It is expected that, over time, there may be multiple different Codes of Conduct; they may be developed by different communities, or may be newer versions of the developed by the same community. This specification is independent of whichever CoC is being referenced in a particular instance.
+      	This document describes a specific SAML "entity attribute" <xref target="SAML2EntityAttribute"/> which indicates a claim that the entity thus labelled is committed to operating in compliance with a specific version of a Code of Conduct. It is expected that, over time, there may be multiple different Codes of Conduct; they may be developed by different communities, or may be newer versions of the developed by the same community. This specification is independent of whichever CoC is being referenced in a particular instance.
       </t>
       
       <t>
-      	This document also describes a second SAML "entity category attribute" <xref target="SAML2EntityAttribute"/> whose value is an assertion of the country/legal jurisdiction which binds the Entity. This should indicate the legal framework under which the SP is operating, and under which disputes would be resolved if a contract does not exist or does not specify an alternative.
+      	This document also describes a second SAML "entity attribute" <xref target="SAML2EntityAttribute"/> whose value is an assertion of the country/legal jurisdiction which binds the Entity. This should indicate the legal framework under which the SP is operating, and under which disputes would be resolved if a contract does not exist or does not specify an alternative.
       </t>
       <t>
       	These SAML entity attribute claims MAY be used by a Service provider to convince an Identity Provider that the relying party is operating in compliance with the terms of the referenced Code of Conduct. Consequently an Identity Provider might consider the risk associated with releasing personal attribute values to that Service Provider to be acceptly low. This claim represents a statement, not a legal agreement.
@@ -138,7 +138,7 @@
     <section anchor="Security" title="Security Considerations">
       <t>
         The presence of the Code of Conduct compliance entity attribute
-        represents a series of claims (one for each attribute value) that the entity is committed to a Code of Conduct. The presence of the Jurisdiction entity attribute represents a claim that the entity is bound by the laws in a certain jurisdiction.
+        represents a claim that the entity is committed to a Code of Conduct. The presence of the Jurisdiction entity attribute represents a claim that the entity is bound by the laws in a certain jurisdiction.
       </t>
         
       <t>
@@ -154,8 +154,7 @@
             assured by a digital signature.
           </t>
           <t>
-            If the entity category attribute is carried within a signed assertion, the assertion
-            itself must be evaluated.
+            If the entity attribute is carried within a signed assertion, the assertion itself must be evaluated.
           </t>
           <t>
             The procedures and policies of the immediate source of the metadata;

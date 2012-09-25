@@ -141,9 +141,9 @@
 <body>
 <table summary="layout" width="66%" border="0" cellpadding="0" cellspacing="0"><tr><td><table summary="layout" width="100%" border="0" cellpadding="2" cellspacing="1">
 <tr><td class="header">Network Working Group</td><td class="header">M. Linden, Ed.</td></tr>
-<tr><td class="header">Internet-Draft</td><td class="header">UKf</td></tr>
+<tr><td class="header">Internet-Draft</td><td class="header">CSC</td></tr>
 <tr><td class="header">Intended status: Informational</td><td class="header">S. Carmody</td></tr>
-<tr><td class="header">Expires: December 28, 2012</td><td class="header">NDN</td></tr>
+<tr><td class="header">Expires: December 28, 2012</td><td class="header">BU</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">June 26, 2012</td></tr>
 </table></td></tr></table>
 <h1><br />EntityAttributes: Code of Conduct and Jurisdiction<br />draft-macedir-entity-attribute-CoC-00.xml</h1>
@@ -209,11 +209,11 @@ than English.</p>
 Introduction and Motivation</h3>
 
 <p>
-      	This document describes a specific SAML "entity category attribute" <a class='info' href='#SAML2EntityAttribute'>[SAML2EntityAttribute]<span> (</span><span class='info'>Cantor, S., Ed., &ldquo;SAML V2.0 Metadata Extension for Entity Attributes,&rdquo; August&nbsp;2009.</span><span>)</span></a> which indicates a claim that the entity thus labelled is committed to operating in compliance with a specific version of a Code of Conduct. It is expected that, over time, there may be multiple different Codes of Conduct; they may be developed by different communities, or may be newer versions of the developed by the same community. This specification is independent of whichever CoC is being referenced in a particular instance.
+      	This document describes a specific SAML "entity attribute" <a class='info' href='#SAML2EntityAttribute'>[SAML2EntityAttribute]<span> (</span><span class='info'>Cantor, S., Ed., &ldquo;SAML V2.0 Metadata Extension for Entity Attributes,&rdquo; August&nbsp;2009.</span><span>)</span></a> which indicates a claim that the entity thus labelled is committed to operating in compliance with a specific version of a Code of Conduct. It is expected that, over time, there may be multiple different Codes of Conduct; they may be developed by different communities, or may be newer versions of the developed by the same community. This specification is independent of whichever CoC is being referenced in a particular instance.
       
 </p>
 <p>
-      	This document also describes a second SAML "entity category attribute" <a class='info' href='#SAML2EntityAttribute'>[SAML2EntityAttribute]<span> (</span><span class='info'>Cantor, S., Ed., &ldquo;SAML V2.0 Metadata Extension for Entity Attributes,&rdquo; August&nbsp;2009.</span><span>)</span></a> whose value is an assertion of the country/legal jurisdiction which binds the Entity. This should indicate the legal framework under which the SP is operating, and under which disputes would be resolved if a contract does not exist or does not specify an alternative.
+      	This document also describes a second SAML "entity attribute" <a class='info' href='#SAML2EntityAttribute'>[SAML2EntityAttribute]<span> (</span><span class='info'>Cantor, S., Ed., &ldquo;SAML V2.0 Metadata Extension for Entity Attributes,&rdquo; August&nbsp;2009.</span><span>)</span></a> whose value is an assertion of the country/legal jurisdiction which binds the Entity. This should indicate the legal framework under which the SP is operating, and under which disputes would be resolved if a contract does not exist or does not specify an alternative.
       
 </p>
 <p>
@@ -313,7 +313,7 @@ Security Considerations</h3>
 
 <p>
         The presence of the Code of Conduct compliance entity attribute
-        represents a series of claims (one for each attribute value) that the entity is committed to a Code of Conduct. The presence of the Jurisdiction entity attribute represents a claim that the entity is bound by the laws in a certain jurisdiction.
+        represents a claim that the entity is committed to a Code of Conduct. The presence of the Jurisdiction entity attribute represents a claim that the entity is bound by the laws in a certain jurisdiction.
       
 </p>
 <p>
@@ -331,8 +331,7 @@ Security Considerations</h3>
           
 </li>
 <li>
-            If the entity category attribute is carried within a signed assertion, the assertion
-            itself must be evaluated.
+            If the entity attribute is carried within a signed assertion, the assertion itself must be evaluated.
           
 </li>
 <li>
